@@ -26,7 +26,7 @@ public class MailSender {
         final String username = "demir.art.app@gmail.com";
         final String password = "demirartapp";
         String fromEmail = "demir.art.app@gmail.com";
-        String toEmail = "imran.sehic55@gmail.com";
+        String toEmail = "demirhusicic20@gmail.com";
 
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");
@@ -64,14 +64,7 @@ public class MailSender {
 
             multipart.addBodyPart(messageBodyPart);
             multipart.addBodyPart(attachImg);
-
-            /*messageBodyPart = new MimeBodyPart();
-            DataSource fds = new FileDataSource(info.getImageUrl());
-
-            messageBodyPart.setDataHandler(new DataHandler(fds));
-            messageBodyPart.setHeader("Content-ID", "<image>");
             
-            multipart.addBodyPart(messageBodyPart);*/
             msg.setContent(multipart);
 
             Transport.send(msg);
