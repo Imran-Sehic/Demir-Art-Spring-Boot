@@ -23,10 +23,10 @@ public class MailSender {
 
     public static void sendEmail(InfoDto info) {
 
-        final String username = "demir.art.app@gmail.com";
-        final String password = "demirartapp";
-        String fromEmail = "demir.art.app@gmail.com";
-        String toEmail = "demirhusicic20@gmail.com";
+        final String username = "username";
+        final String password = "password";
+        String fromEmail = "emailFrom@email.com";
+        String toEmail = "emailTo@email.com";
 
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");
