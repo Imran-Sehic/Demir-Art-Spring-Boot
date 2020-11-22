@@ -12,6 +12,6 @@ public class InfoDto {
     private String name;
     private String lastname;
     private Long cellphone;
-    private String imageUrl;
+    private String image_url;
     
 }

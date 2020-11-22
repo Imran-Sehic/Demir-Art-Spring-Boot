@@ -6,6 +6,7 @@ import com.pictures_shop.repository.PictureRepository;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,8 +24,8 @@ public class PictureService {
     }
     
     @Transactional(readOnly = true)
-    public Picture getPicture(Integer id) {
-        Picture picture = pictureRepository.findById(id).orElseThrow(() -> new PictureNotFoundException(id.toString()));
+    public Picture getPicture(String _id) {
+        Picture picture = pictureRepository.findById(new ObjectId(_id)).orElseThrow(() -> new PictureNotFoundException(_id));
         return picture;
     }
     

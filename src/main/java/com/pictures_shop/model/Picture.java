@@ -1,31 +1,24 @@
 package com.pictures_shop.model;
 
 import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
-import javax.persistence.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.FieldType;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @Data
-@Entity
+@Document(collection = "picture")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Picture implements Serializable{
     
-    @Id
-    @GeneratedValue(strategy = IDENTITY)
-    private int id;
-    @Column(name = "name")
+    @MongoId(value = FieldType.OBJECT_ID)
+    private String _id;
     private String name;
-    @Column(name = "description")
     private String description;
-    @Column(name = "image_url")
-    private String imageUrl;
-    @Column(name = "sold")
+    private String image_url;
     private String sold;
     
 }

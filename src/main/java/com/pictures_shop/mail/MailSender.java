@@ -23,10 +23,10 @@ public class MailSender {
 
     public static void sendEmail(InfoDto info) {
 
-        final String username = "username";
-        final String password = "password";
-        String fromEmail = "emailFrom@email.com";
-        String toEmail = "emailTo@email.com";
+        final String username = "demir.art.app@gmail.com";
+        final String password = "demirartapp";
+        final String fromEmail = "demir.art.app@gmail.com";
+        final String toEmail = "demirhusicic20@gmail.com";
 
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");
@@ -57,7 +57,7 @@ public class MailSender {
 
             MimeBodyPart attachImg = new MimeBodyPart();
 
-            URL url = new URL(info.getImageUrl());
+            URL url = new URL(info.getImage_url());
             File file = new File("image.jpeg");
             FileUtils.copyURLToFile(url, file);
             attachImg.attachFile(file);

@@ -26,9 +26,9 @@ public class PictureController {
         return status(HttpStatus.OK).body(pictureService.getAllPictures());
     }
     
-    @GetMapping("/{id}")
-    public ResponseEntity<Picture> getPost(@PathVariable Integer id) {
-        return status(HttpStatus.OK).body(pictureService.getPicture(id));
+    @GetMapping("/{_id}")
+    public ResponseEntity<Picture> getPost(@PathVariable String _id) {
+        return status(HttpStatus.OK).body(pictureService.getPicture(_id));
     }
     
 }
